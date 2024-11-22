@@ -5,9 +5,14 @@ import joblib
 import json
 
 
+
 # Load model and necessary files
 def load_models():
-    model = joblib.load('voting_clf_model.pkl')
+    url = "https://drive.google.com/uc?id=1GFMAps0M7lXvP4vLwR_Wx1Tgr_9OMkAo"
+    output = "voting_clf_model.pkl"
+    gdown.download(url, output, quiet=False)
+   # Modeli yükleme
+    model = joblib.load(output)
     scaler = joblib.load('model_scaler.pkl')
     kmeans = joblib.load('kmeans_model.pkl')
     with open('model_features.json', 'r') as f:
