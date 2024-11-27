@@ -6,3 +6,4 @@ catboost
 xgboost
 gdown
 joblib
+lightgbm
